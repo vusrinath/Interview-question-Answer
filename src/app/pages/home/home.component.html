@@ -1,1 +1,17 @@
-<p>home works!</p>
+<section class="container main-content pt-1">
+    <div class="row">
+        <div class="col-4">
+            <select>
+                <option>Select Option</option>
+                <option *ngFor="let item of languagaesList" [value]="item.languageId">{{item.language}}</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <select>
+                <option>Select Option</option>
+                <option *ngFor="let item of languagaesList" [value]="item.languageId">{{item.language}}</option>
+            </select>
+        </div>
+    </div>
+
+</section>

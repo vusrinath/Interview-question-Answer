@@ -10,6 +10,11 @@ export const routes: Routes = [
     },
     {
         component : HomeComponent,
-        title : 'home'
-    }
+        title : 'home',
+        path: 'home',
+        pathMatch: 'full'
+    },
+    
 ];
+
+
