@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import {APIResponsModel} from '../model/language.model';
+import { APIResponsModel, LanguageTopic } from '../model/language.model';
 
 
 @Injectable({
@@ -12,11 +12,22 @@ export class InterviewService {
   apiEndPoint: string = "https://freeapi.gerasim.in/api/Interview/";
   apiEndPoint2: string = "https://freeapi.gerasim.in/api/miniproject/";
 
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
 
-   }
+  }
 
-  getAllLanguages(): Observable<APIResponsModel>{
-    return this.http.get<APIResponsModel>(this.apiEndPoint+"GetAllLanguage");
-   }
+  getAllLanguages(): Observable<APIResponsModel> {
+    return this.http.get<APIResponsModel>(this.apiEndPoint + "GetAllLanguage");
+  }
+
+  getTopicsByLanguageId(lagId: number): Observable<LanguageTopic> {
+    return this.http.get<LanguageTopic>(this.apiEndPoint + "GetLanguageTopicById?id=" + lagId);
+  }
+
+  getQuestionBtTopicId(topicId: number): Observable<APIResponsModel> {
+    return this.http.get<APIResponsModel>(this.apiEndPoint + "GetQuestionByTopicId?id=" + topicId);
+  }
+
+
+
 }
