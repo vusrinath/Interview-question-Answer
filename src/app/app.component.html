@@ -1,8 +1,13 @@
 <nav>
-  <a href="home">Home</a>
-  <a href="category">Category</a> 
-  <a href="questions">Questions</a> 
-  <a href="contact">Contact</a> 
-</nav>
-
-<router-outlet></router-outlet>
+  <a [routerLink]="['/home']"   >Home</a>
+  <a [routerLink]="['/projects']"   >Projects</a>
+  <a [routerLink]="['/home']"   >Questions</a>
+  <a [routerLink]="['/home']"   >Contact</a> 
+  <a [routerLink]="['/home']"   >Setting</a> 
+  <button (click)="toggleTheme()">
+    Switch to {{ isDarkMode() ? 'Light' : 'Dark' }} Mode
+  </button>
+</nav> 
+<div class="container-fluid pt-1"> 
+  <router-outlet></router-outlet>
+</div>

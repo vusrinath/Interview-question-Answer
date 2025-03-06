@@ -1,3 +1,9 @@
+export interface ILanguage {
+    languageId: number;
+    language: string;
+    logo: string;
+    youtubePlayListUrl:string;
+}
 
 export interface APIResponsModel {
     message: string;
@@ -5,15 +11,25 @@ export interface APIResponsModel {
     data: any;
 }
 
-export interface Ilanguage {
-    languageId: number;
-    language: string;
-    logo: string;
-}
-
 export interface LanguageTopic {
-    languageTopicID: number;
+
+    languageTopicId: number;
     languageId: number;
     topicName: string;
     orderNo: number;
+    youtubeVideoUrl: string;
+
 }
+
+export interface Question {
+    question: string
+    answer: string
+    isRead: boolean
+    topicName: string
+    languageTopicId: number
+    questionId: number
+    language: string
+    languageId: number
+    orderNo: number
+    logo: string
+  }
